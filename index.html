@@ -13,6 +13,9 @@
             overflow-x: hidden;
             cursor: none;
             font-family: 'Courier New', monospace;
+            text-align: center;
+            margin-left: 5rem;
+            margin-right: 5rem;
         }
 
         .navlink:hover {
@@ -64,8 +67,6 @@
             }
         }
 
-
-
         .textBody {
             letter-spacing: 2rem;
             position: relative;
@@ -102,6 +103,20 @@
         .textBody:hover::after {
             animation: shakeDown 0.6s ease forwards infinite;
         }
+
+        .scrollDiv {
+            animation: scrollBounce 0.7s ease-in-out alternate-reverse infinite;
+        }
+
+        @keyframes scrollBounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 
@@ -111,7 +126,7 @@
     <div
         class="customCursor2 fixed left-0 top-0 w-3 h-3 border bg-white rounded-full pointer-events-none mix-blend-difference z-1">
     </div>
-    <div class="flex items-center justify-between mx-[5rem] my-[2rem]">
+    <div class="flex items-center justify-between  my-[2rem]">
         <h1 class="font-bold text-[1.5rem]">M N C H R M</h1>
         <ul class="flex items-center justify-between gap-[5rem] font-medium text-[1.2rem]">
             <li class="navlink p-2 z-0">About</li>
@@ -124,7 +139,24 @@
         <h1 class="textBody border-1 border-red-600 text-[8rem]" data-text="MONOCHROME">
             MONOCHROME
         </h1>
-        <p class="text-2xl text-gray-400">DIGITAL DESIGN STUDIO</p> 
+        <p class="text-3xl text-gray-400 tracking-[0.6em]">DIGITAL DESIGN STUDIO</p>
+    </div>
+
+    <div class="scrollDiv space-y-5">
+        <p class="text-lg text-gray-400 tracking-[0.5em]">SCROLL</p>
+        <div class="scroll w-[2px] h-20  mx-auto bg-linear-to-b from-white to-black "></div>
+    </div>
+
+    <div class="flex items-center justify-between my-[2rem] gap-[5rem]">
+        <div class="flex-1 text-gray-500 text-3xl text-start leading-loose tracking-wider">
+            <p>We craft <span class="text-white">digital experiences</span> that exist at the intersection of <span class="text-white">art and technology</span>. <br><br>
+                Every pixel serves a purpose. Every motion tells a story.</p>
+        </div>
+        <div class="flex-1 bg-zinc-950 w-fit h-[40em]">
+             <div class="border w-[20rem] h-[20rem] mx-auto my-[10rem] py-[4.5rem] rotate-45">
+                <div class="bg-white w-40 h-40 rotate-45 mx-auto "></div> 
+            </div> 
+        </div>
     </div>
 
     <script src="./script.js"></script>
