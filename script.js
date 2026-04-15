@@ -1,6 +1,7 @@
 const customCursor = document.querySelector(".customCursor")
 const customCursor2 = document.querySelector(".customCursor2")
 const navlink = document.querySelectorAll(".navlink")
+
 let smallMouseX = 0, smallMouseY = 0
 let bigMouseX = 0, bigMouseY = 0
 
@@ -26,14 +27,14 @@ mouseRotation()
 
 navlink.forEach(link => {
     link.addEventListener('mouseover', () => {
-        link.style.cursor="pointer"
+        link.style.cursor = "pointer"
         customCursor.style.display = "none"
         customCursor2.style.transform = "scale(4.5)"
     })
 })
 navlink.forEach(link => {
     link.addEventListener('mouseout', () => {
-        
+
         customCursor2.style.transform = "scale(1)"
         customCursor.style.display = "block"
     })

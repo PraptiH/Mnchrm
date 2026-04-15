@@ -14,10 +14,94 @@
             cursor: none;
             font-family: 'Courier New', monospace;
         }
-        .navlink:hover{
+
+        .navlink:hover {
             text-decoration: underline;
         }
 
+
+        @keyframes shakeUp {
+            0% {
+                transform: skew(-7deg) translateX(-5px);
+            }
+
+            25% {
+                transform: skewX(7deg) translateY(5px);
+            }
+
+            50% {
+                transform: skewX(-7deg) translateY(-5px);
+            }
+
+            75% {
+                transform: skewX(7deg) translateY(5px);
+            }
+
+            100% {
+                transform: skewX(-7deg) translateY(-5px);
+            }
+        }
+
+        @keyframes shakeDown {
+            0% {
+                transform: skew(-7deg) translateY(5px);
+            }
+
+            25% {
+                transform: skewX(10deg) translateY(-5px);
+            }
+
+            50% {
+                transform: skewX(-7deg) translateY(5px);
+            }
+
+            75% {
+                transform: skewX(7deg) translateY(-5px);
+            }
+
+            100% {
+                transform: skewX(-7deg) translateY(5px);
+            }
+        }
+
+
+
+        .textBody {
+            letter-spacing: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .textBody::before {
+            content: attr(data-text);
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            clip-path: inset(0 0 50% 0);
+            color: gray;
+
+        }
+
+        .textBody::after {
+            content: attr(data-text);
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            right: 0;
+            clip-path: inset(50% 0 0 0);
+            transform: translateY(1px);
+            color: gray;
+
+        }
+
+        .textBody:hover::before {
+            animation: shakeUp 0.6s ease forwards infinite;
+        }
+
+        .textBody:hover::after {
+            animation: shakeDown 0.6s ease forwards infinite;
+        }
     </style>
 </head>
 
@@ -34,6 +118,13 @@
             <li class="navlink p-2 z-0">Work</li>
             <li class="navlink p-2 z-0">Contact</li>
         </ul>
+    </div>
+
+    <div class="border text-center w-11/12 mx-auto my-[10%]">
+        <h1 class="textBody border-1 border-red-600 text-[8rem]" data-text="MONOCHROME">
+            MONOCHROME
+        </h1>
+        <p class="text-2xl text-gray-400">DIGITAL DESIGN STUDIO</p> 
     </div>
 
     <script src="./script.js"></script>
