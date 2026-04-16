@@ -5,6 +5,7 @@ const parentBox = document.querySelector(".parentBox")
 const outerBox = document.querySelector(".outerBox")
 const innerBox = document.querySelector(".innerBox")
 const mail = document.querySelector(".mail")
+const footerLink = document.querySelectorAll('.footerLink')
 
 let smallMouseX = 0, smallMouseY = 0
 let bigMouseX = 0, bigMouseY = 0
@@ -88,5 +89,19 @@ mail.addEventListener('mouseover', () => {
 mail.addEventListener('mouseout', () => {
     customCursor.style.display = "block"
     customCursor2.style.transform = "scale(1)"
+})
+
+footerLink.forEach(link => {
+        link.addEventListener('mouseover', () => {
+        link.style.cursor = "pointer"
+        customCursor.style.display = "none"
+        customCursor2.style.transform = "scale(5.5)"
+    })
+})
+footerLink.forEach(link => {
+        link.addEventListener('mouseout', () => {
+        customCursor2.style.transform = "scale(1)"
+        customCursor.style.display = "block"
+    })
 })
 
