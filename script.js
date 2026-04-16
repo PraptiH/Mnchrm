@@ -4,6 +4,7 @@ const navlink = document.querySelectorAll(".navlink")
 const parentBox = document.querySelector(".parentBox")
 const outerBox = document.querySelector(".outerBox")
 const innerBox = document.querySelector(".innerBox")
+const mail = document.querySelector(".mail")
 
 let smallMouseX = 0, smallMouseY = 0
 let bigMouseX = 0, bigMouseY = 0
@@ -37,46 +38,55 @@ navlink.forEach(link => {
 })
 navlink.forEach(link => {
     link.addEventListener('mouseout', () => {
-
         customCursor2.style.transform = "scale(1)"
         customCursor.style.display = "block"
     })
 })
 
-parentBox.addEventListener('mouseenter',()=>{
+parentBox.addEventListener('mouseenter', () => {
     console.log("mouse")
     outerBox.animate([
-        {transform: 'rotate(180deg)'}
-    ],{
-        duration:1000,
-        iteration:1
+        { transform: 'rotate(180deg)' }
+    ], {
+        duration: 1000,
+        iteration: 1
 
     })
     innerBox.animate([
-        {transform: 'scale(1.8)'}
-    ],{
-        duration:1000,
-        iteration:1,
-        fill:'forwards'
+        { transform: 'scale(1.8)' }
+    ], {
+        duration: 1000,
+        iteration: 1,
+        fill: 'forwards'
     })
 })
 
-parentBox.addEventListener('mouseleave',()=>{
+parentBox.addEventListener('mouseleave', () => {
     console.log("mouse")
     outerBox.animate([
         // {transform: 'rotate(0deg)'},
-        {transform: 'rotate(-180deg)'}
-    ],{
-        duration:1000,
-        iteration:1,
-        animationTimingFunction:"ease"
+        { transform: 'rotate(-180deg)' }
+    ], {
+        duration: 1000,
+        iteration: 1,
+        animationTimingFunction: "ease"
     })
     innerBox.animate([
-        {transform: 'scale(1)'}
-    ],{
-        duration:1000,
-        iteration:1,
-        fill:'forwards'
+        { transform: 'scale(1)' }
+    ], {
+        duration: 1000,
+        iteration: 1,
+        fill: 'forwards'
     })
+})
+
+mail.addEventListener('mouseover', () => {
+    mail.style.cursor = "pointer"
+    customCursor.style.display = "none"
+    customCursor2.style.transform = "scale(4.5)"
+})
+mail.addEventListener('mouseout', () => {
+    customCursor.style.display = "block"
+    customCursor2.style.transform = "scale(1)"
 })
 
